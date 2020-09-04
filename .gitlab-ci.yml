@@ -1,0 +1,19 @@
+stages:
+  - build
+
+Build C15:
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  image: stronglytyped/arm-none-eabi-gcc
+  stage: build
+  script:
+    - make
+  artifacts:
+    paths:
+      - build/**
+    expire_in: 1 year
+
+Build C18:
+  extends: Build C15
+  variables:
+    MODEL: C18
