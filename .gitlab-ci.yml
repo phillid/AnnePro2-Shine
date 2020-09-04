@@ -8,6 +8,10 @@ Build C15:
   stage: build
   script:
     - make
+  artifacts:
+    paths:
+      - build/**
+    expire_in: 1 year
 
 Build C18:
   extends: Build C15
