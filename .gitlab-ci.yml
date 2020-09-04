@@ -1,0 +1,10 @@
+stages:
+  - build
+
+Build:
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  image: stronglytyped/arm-none-eabi-gcc
+  stage: build
+  script:
+    - make
